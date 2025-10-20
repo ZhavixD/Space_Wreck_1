@@ -9,24 +9,20 @@ pygame.init()
 screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
 pygame.display.set_caption("Space Wreck")
 
-# Jugador
-player = pygame.Rect(constants.WIDTH // 2 - constants.player_width // 2,
-                    constants.HEIGHT - constants.player_height - 10,
-                    constants.player_width, constants.player_height)
-
 # Cargar imagenes
+
 player_img = pygame.image.load("ship.png").convert_alpha()
 meteor_img = pygame.image.load("meteor.png").convert_alpha()
 background_img = pygame.image.load("space.png")
 
-# Define las nuevas dimensiones
-player_size = (90, 90) # Nuevo tamaño para la imgaen del jugador
-meteor_size = (60, 60) # Nuevo tamaño para la imagen del meteorito
-
 # Redimensiona las imagenes
-player_img = pygame.transform.scale(player_img, player_size)
-meteor_img = pygame.transform.scale(meteor_img, meteor_size)
+player_img = pygame.transform.scale(player_img, constants.PLAYER_SIZE)
+meteor_img = pygame.transform.scale(meteor_img, constants.MAETEOR_SIZE["pequeno"])
 
+# Jugador
+player = pygame.Rect(constants.WIDTH // 2 - constants.player_width // 2,
+                    constants.HEIGHT - constants.player_height - 10,
+                    constants.player_width, constants.player_height)
 
 
 
